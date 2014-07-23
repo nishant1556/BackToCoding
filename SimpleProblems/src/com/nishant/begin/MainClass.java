@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import org.joda.time.DateTime;
+
 import com.nishant.begin.sorting.BubbleSort;
 import com.nishant.begin.sorting.QuickSort;
 
@@ -41,19 +43,31 @@ public class MainClass {
 				ArrayList<Integer> toBeSorted = new ArrayList<Integer>();
 				for(int i=0; i<tokens.length; i++)
 					toBeSorted.add(Integer.parseInt(tokens[i]));
+				DateTime startTime1 = new DateTime();
 				BubbleSort.bubbleSort(toBeSorted);
+				DateTime endTime1 = new DateTime();
+				long difference1 = endTime1.getMillis() - startTime1.getMillis();
+				System.out.println();
+				System.out.println("BubbleSort took:"+difference1+" milliseconds");
+				break;
 			case 5:
-				System.out.println("Enter the space-delimited array to be bubble sorted");
+				System.out.println("Enter the space-delimited array to be quick sorted sorted");
 				String inputString1 = in.readLine();
 				String [] tokens1 = inputString1.split(" ");
 				int[] inputArray = new int[tokens1.length];
 				for(int i=0; i<tokens1.length; i++)
 					inputArray[i] = Integer.parseInt(tokens1[i]);
+				DateTime startTime = new DateTime();
 				QuickSort.quickSort(inputArray, 0, inputArray.length-1);
+				DateTime endTime = new DateTime();
+				long difference = endTime.getMillis() - startTime.getMillis();
+				
+				System.out.println("QuickSort took:"+difference+" milliseconds");
 				
 				for(int i=0; i<inputArray.length; i++)
 		    		System.out.print(inputArray[i]+" ");
 				System.out.println();
+				break;
 				
 			default:
 				break;
