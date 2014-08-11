@@ -16,7 +16,7 @@ public class MainClass {
 		int userChoice;
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("This is project which has certain simple Java functions.\nFollow the instructions");
-		System.out.println("1>>>>OddEven\n2>>>>PrimeNumber\n3>>>>NumberPallindrome\n4>>>>BubbleSort\n5>>>>QuickSort\n6>>>>Exit");
+		System.out.println("1>>>>OddEven\n2>>>>PrimeNumber\n3>>>>NumberPallindrome\n4>>>>BubbleSort\n5>>>>QuickSort\n6>>>>BinaryNumber\n7>>>>Exit");
 		userChoice = Integer.parseInt(in.readLine());
 		do {
 			switch(userChoice) {
@@ -68,13 +68,17 @@ public class MainClass {
 		    		System.out.print(inputArray[i]+" ");
 				System.out.println();
 				break;
-				
+			case 6:
+				System.out.println("Enter number:");
+				String input = in.readLine();
+				int inputNumber4 = Integer.parseInt(input);
+				Binary.getBinary(inputNumber4);
 			default:
 				break;
 			}
-			System.out.println("1>>>>OddEven\n2>>>>PrimeNumber\n3>>>>NumberPallindrome\n4>>>>BubbleSort\n5>>>>QuickSort\n6>>>>Exit");
+			System.out.println("1>>>>OddEven\n2>>>>PrimeNumber\n3>>>>NumberPallindrome\n4>>>>BubbleSort\n5>>>>QuickSort\n6>>>>BinaryNumber\n7>>>>Exit");
 			userChoice = Integer.parseInt(in.readLine());
-		}while(userChoice != 6);
+		}while(userChoice != 7);
 	}
 
 }
